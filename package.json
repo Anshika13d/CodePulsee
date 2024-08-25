@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "serve -s dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -36,6 +37,7 @@
     "react-type-animation": "^3.2.0",
     "react-use": "^17.5.1",
     "react-youtube": "^10.1.0",
+    "serve": "^14.2.3",
     "split.js": "^1.6.5"
   },
   "devDependencies": {
