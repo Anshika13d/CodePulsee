@@ -44,16 +44,16 @@ function Level() {
   //console.log(solvedProblems);
   
   
-  // const [inputs, setInputs] = useState({
-  //   id: '',
-  //   title: '', 
-  //   difficulty: '',
-  //   videoId: '',
-  //   order: '',
-  //   link: '',
-  //   likes: 0,
-  //   dislikes: 0,
-  // })
+  const [inputs, setInputs] = useState({
+    id: '',
+    title: '', 
+    difficulty: '',
+    videoId: '',
+    order: '',
+    link: '',
+    likes: 0,
+    dislikes: 0,
+  })
 
 
   // const handleChange = (e) => {
@@ -71,7 +71,7 @@ function Level() {
   //     ...inputs,
   //     order: parseInt(inputs.order)
   //   }
-  //   await setDoc(doc(firestore, "main_problems", inputs.id), newProblem);
+  //   await setDoc(doc(firestore, "problems", inputs.id), newProblem);
   //   alert("save to db")
   // }  
 
@@ -267,7 +267,7 @@ function Level() {
         <input onChange={handleChange} type="text" placeholder='problem id' name='id' />
         <input onChange={handleChange} type="text" placeholder='title' name='title' />
         <input onChange={handleChange} type="text" placeholder='difficulty' name='difficulty' />
-        {/* <input onChange={handleChange} type="text" placeholder='category' name='category' /> 
+        <input onChange={handleChange} type="text" placeholder='category' name='category' />
         <input onChange={handleChange} type="text" placeholder='order' name='order' />
         <input onChange={handleChange} type="text" placeholder='videoId?' name='videoId' />
         <input onChange={handleChange} type="text" placeholder='link' name='link' />

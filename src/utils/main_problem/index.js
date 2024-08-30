@@ -3,6 +3,9 @@ import { checkIfSortedAndRotated } from "../level3_probs/checkIfSortedAndRotated
 import { sortColors } from "../level4_probs/sortArrayOf012";
 import { removeDuplicates } from "../level5_probs/removeDuplicatesFromSortedArray";
 import { twoSum } from "../problems/twoSum";
+import { searchInsert } from "../problems/searchInsert";
+import { summaryRanges } from "../problems/SummaryRanges";
+import { firstBadVersion } from "../problems/FirstBadVersion";
 
 
 export const main_problems = {
@@ -11,5 +14,8 @@ export const main_problems = {
     "removeDuplicates":removeDuplicates,
     "checkIfSortedAndRotated":checkIfSortedAndRotated,
     "kadanesAlgorithm":maxSubArray,
-    "sortArrayOf012":sortColors
+    "sortArrayOf012":sortColors,
+    "searchInsert":searchInsert,
+    "summaryRanges":summaryRanges,
+    "firstBadVersion":firstBadVersion
 }
