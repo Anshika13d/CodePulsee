@@ -53,7 +53,7 @@ function Signup() {
             
     
             // Store user data in your MongoDB database via your API
-            await axios.post('http://localhost:4000/signup', {
+            await axios.post('https://codepulse-backend.onrender.com/signup', {
                 username,
                 email,
                 password,
