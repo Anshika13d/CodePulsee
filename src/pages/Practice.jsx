@@ -163,33 +163,26 @@ function Practice() {
       <div className='container w-1/2  flex justify-end  mb-14'>
       {lock2 == true? 
           <LockedBtn/> :
-          <Link to={`/level/${level2_probs.id}`}> 
                           <button 
                           className='bg-gradient-to-r from-gray-700 to-gray-800 h-12 w-1/2  transition-all duration-300 ease-in-out hover:shadow-glow-purple rounded-lg text-white font-bold'>
-                            Level 2
+                            <Link to={`/level/${level2_probs.id}`}> Level 2 </Link>
                         </button>
-                        </Link>
 }
       </div>
 
       <div className='container w-1/2 flex items-start  mb-14'>
       {lock3 == true? <LockedBtn/> :  
-      <Link to={`/level/${level3_probs.id}`}> 
                                       <button className='bg-gradient-to-r from-gray-700 to-gray-800 h-12 w-1/2 transition-all duration-300 ease-in-out hover:shadow-glow-purple rounded-lg text-white font-bold'>
-                                        Level 3 
+                                        <Link to={`/level/${level3_probs.id}`}> Level 3 </Link> 
                                       </button>
-                                      </Link> 
       }
       </div>
 
       <div className='container w-1/2  flex justify-end  mb-14'>
-        {lock4? <LockedBtn /> : 
-            <Link to={`/level/${level4_probs.id}`}>
-                            <button 
+        {lock4? <LockedBtn /> : <button 
                                   className='bg-gradient-to-r from-gray-700 to-gray-800 h-12 w-1/2  transition-all duration-300 ease-in-out hover:shadow-glow-purple rounded-lg text-white font-bold'>
-                                     Level 4 
+                                    <Link to={`/level/${level4_probs.id}`}> Level 4  </Link>
                                 </button> 
-                                </Link>
         } 
       </div>
       <div className='container w-1/2  items-start  mb-14 mt-9'>

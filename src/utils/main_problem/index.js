@@ -6,6 +6,7 @@ import { twoSum } from "../problems/twoSum";
 import { searchInsert } from "../problems/searchInsert";
 import { summaryRanges } from "../problems/SummaryRanges";
 import { firstBadVersion } from "../problems/FirstBadVersion";
+import { palindromeNumber } from "../problems/PalindromeNumber";
 
 
 export const main_problems = {
@@ -17,5 +18,6 @@ export const main_problems = {
     "sortArrayOf012":sortColors,
     "searchInsert":searchInsert,
     "summaryRanges":summaryRanges,
-    "firstBadVersion":firstBadVersion
+    "firstBadVersion":firstBadVersion,
+    "palindromeNumber":palindromeNumber,
 }

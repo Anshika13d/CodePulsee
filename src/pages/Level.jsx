@@ -56,24 +56,24 @@ function Level() {
   })
 
 
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   setInputs({ 
-  //     ...inputs, 
-  //     [e.target.name]: e.target.value });
-  // }
+  const handleChange = (e) => {
+    e.preventDefault();
+    setInputs({ 
+      ...inputs, 
+      [e.target.name]: e.target.value });
+  }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   //convert inputs.order to integer
-  //   const newProblem = {
-  //     ...inputs,
-  //     order: parseInt(inputs.order)
-  //   }
-  //   await setDoc(doc(firestore, "problems", inputs.id), newProblem);
-  //   alert("save to db")
-  // }  
+    //convert inputs.order to integer
+    const newProblem = {
+      ...inputs,
+      order: parseInt(inputs.order)
+    }
+    await setDoc(doc(firestore, "problems", inputs.id), newProblem);
+    alert("save to db")
+  }  
 
   //fetch problems from firebase
   const problems = useGetProblems(setLoading);
@@ -248,22 +248,23 @@ function Level() {
       {youtubePlayer.isOpen && (
         <div className='fixed inset-0 flex items-center justify-center z-50'>
           <div className='bg-black bg-opacity-75 w-full h-full absolute' 
-            onClick={() => setYoutubePlayer({ isOpen: false, videoId: '' })} ></div>
+            onClick={() => setYoutubePlayer({ isOpen: false, videoId: '' })} >
+          </div>
           <div className='relative z-50 w-full max-w-4xl p-6'>
               <CloseIcon 
                 className='absolute top-5 right-0 text-white cursor-pointer'
                 onClick={() => setYoutubePlayer({ isOpen: false, videoId: '' })} 
               />
-            <div className='relative'>
+          <div className='relative'>
               
-              <YouTube videoId={youtubePlayer.videoId} loading='lazy' iframeClassName='w-full min-h-[450px]' />
-            </div>
+            <YouTube videoId={youtubePlayer.videoId} loading='lazy' iframeClassName='w-full min-h-[450px]' />
           </div>
         </div>
-      )}
+      </div>
+    )}
 
       {/* temp form */}
-      {/* <form className='p-6 flex flex-col max-w-sm gap-3' onSubmit={handleSubmit}>
+      <form className='p-6 flex flex-col max-w-sm gap-3' onSubmit={handleSubmit}>
         <input onChange={handleChange} type="text" placeholder='problem id' name='id' />
         <input onChange={handleChange} type="text" placeholder='title' name='title' />
         <input onChange={handleChange} type="text" placeholder='difficulty' name='difficulty' />
@@ -272,9 +273,9 @@ function Level() {
         <input onChange={handleChange} type="text" placeholder='videoId?' name='videoId' />
         <input onChange={handleChange} type="text" placeholder='link' name='link' />
         <button type='submit' className='bg-white'>save to db</button>
-      </form> */}
+      </form>
       
-<Footer />
+    <Footer />
       
     </>
   );
@@ -285,15 +286,20 @@ function useGetProblems(setLoading) {
 
   useEffect(() => {
     const getProblems = async () => {
-      setLoading(true);
-      const q = query(collection(firestore, "problems"), orderBy("order", "asc"));
-      const querySnapshot = await getDocs(q);
-      const tmp = [];
-      querySnapshot.forEach((doc) => {
-        tmp.push({ id: doc.id, ...doc.data() });
-      });
-      setProblems(tmp);
-      setLoading(false);
+      try{
+        setLoading(true);
+        const q = query(collection(firestore, "problems"), orderBy("order", "asc"));
+        const querySnapshot = await getDocs(q);
+        const tmp = [];
+        querySnapshot.forEach((doc) => {
+          tmp.push({ id: doc.id, ...doc.data()});
+        });
+        setProblems(tmp);
+        setLoading(false);
+      }
+      catch(err){
+        console.error("rrrrrrrrrrrrrrr");
+      }
     };
 
     getProblems();

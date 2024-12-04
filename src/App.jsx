@@ -35,7 +35,7 @@ function App() {
   };
 
   useEffect( () => {
-     axios.get('https://codepulse-backend.onrender.com/profile', {
+     axios.get('http://localhost:4000/profile', {
       withCredentials: true
     })
     .then(response => {
@@ -47,7 +47,7 @@ function App() {
   }, []);
 
   function logout(){
-    axios.post('https://codepulse-backend.onrender.com/logout', {}, {
+    axios.post('http://localhost:4000/logout', {}, {
       withCredentials: true
     })
     .then(() => {

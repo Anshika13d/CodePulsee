@@ -45,6 +45,13 @@ const probs = [
     videoId: "vnfGi-ucwTE"
   },
   {
+    id: "palindromeNumber",
+    title: "Palindrome Number",
+    difficulty: "Easy",
+    order: 9,
+    videoId: "yubRKwixN-U"
+  },
+  {
     id: "searchInsert",
     title: "Search Insert Position",
     difficulty: "Easy",

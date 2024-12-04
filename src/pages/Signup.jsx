@@ -26,6 +26,8 @@ function Signup() {
             const auth = getAuth();
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
+            console.log(user.uid);
+            
     
             // Prepare user data to store in Firestore and MongoDB
             const userData = {
@@ -39,12 +41,19 @@ function Signup() {
                 solvedProblems: [],
                 starredProblems: [],
             };
+            console.log(userData);
+            
     
             // Store user data in Firebase Firestore
-            await setDoc(doc(firestore, 'users', user.uid), userData);
+            try {
+                await setDoc(doc(firestore, 'users', user.uid), userData);
+            } catch (error) {
+                console.error('Error writing to Firestore:', error);
+            }
+            
     
             // Store user data in your MongoDB database via your API
-            await axios.post('https://codepulse-backend.onrender.com/signup', {
+            await axios.post('http://localhost:4000/signup', {
                 username,
                 email,
                 password,
