@@ -264,7 +264,7 @@ function Level() {
     )}
 
       {/* temp form */}
-      <form className='p-6 flex flex-col max-w-sm gap-3' onSubmit={handleSubmit}>
+{/*       <form className='p-6 flex flex-col max-w-sm gap-3' onSubmit={handleSubmit}>
         <input onChange={handleChange} type="text" placeholder='problem id' name='id' />
         <input onChange={handleChange} type="text" placeholder='title' name='title' />
         <input onChange={handleChange} type="text" placeholder='difficulty' name='difficulty' />
@@ -273,7 +273,7 @@ function Level() {
         <input onChange={handleChange} type="text" placeholder='videoId?' name='videoId' />
         <input onChange={handleChange} type="text" placeholder='link' name='link' />
         <button type='submit' className='bg-white'>save to db</button>
-      </form>
+      </form> */}
       
     <Footer />
       
